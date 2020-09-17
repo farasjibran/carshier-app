@@ -57,11 +57,15 @@ $(document).ready(function () {
                 order: currentOrder,
                 totalprice: totalprice
             },
-            url: "/cashier",
+            url: "carshier",
             success: function (msg) {
                 console.log(msg)
                 alert('berhasil')
                 window.location.reload();
+            },
+            error: function (msg) {
+                console.log(msg)
+                alert("There was an error. Try again please!");
             }
         });
     })

@@ -53,7 +53,6 @@ class AdminController extends Controller
         return view('parcial.admin.crudUser.updateUser', ['u' => $users]);
     }
 
-
     public function editEmploye(Request $request, $id)
     {
         $users = User::find($id);
@@ -94,5 +93,34 @@ class AdminController extends Controller
         $foods->save();
 
         return redirect()->route('menuview')->with('success', 'Item created successfully!');
+    }
+
+    public function modalUpdateFood($id)
+    {
+        $foods = Food::find($id);
+        return view('parcial.admin.crudFood.updateFood', ['f' => $foods]);
+    }
+
+    public function editFood(Request $request, $id)
+    {
+        $imageName = $request->foto->getClientOriginalName();
+        $request->foto->move(public_path('img'), $imageName);
+
+        $foods = Food::find($id);
+        $foods->nama_makanan = $request->nama_makanan;
+        $foods->harga = $request->harga;
+        $foods->stok_makanan = $request->stok_makanan;
+        $foods->foto_makanan = $imageName;
+        $foods->save();
+
+        return redirect()->route('menuview')->with('info', 'Item created successfully!');
+    }
+
+    public function deleteFood($id)
+    {
+        $foods = Food::find($id);
+        $foods->delete();
+
+        return redirect()->route('menuview')->with('error', 'Item deleted successfully!');
     }
 }

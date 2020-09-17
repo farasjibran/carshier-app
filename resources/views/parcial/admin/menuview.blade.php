@@ -60,13 +60,13 @@
                         <td>{{ $f->stok_makanan}}</td>
                         <td><img width="300" src="{{ asset('img/'.$f->foto_makanan)}}"></td>
                         <td>
-                            <a href="/update/form/{{$f->id_makanan}}" type="button" class="btn btn-primary btn-icon-split editbtn" style="padding-right: 6%;">
+                            <a href="/updatefood/form/{{$f->id_makanan}}" type="button" class="btn btn-primary btn-icon-split editbtn" style="padding-right: 6%;">
                                 <span class="icon text-white">
                                     <i class="fas fa-edit"></i>
                                 </span>
                                 <span class="text text-white">Edit Data</span>
                             </a>
-                            <a href="/delete/{{$f->id_makanan}}" type="button" class="btn btn-danger btn-icon-split deletebtn" style="padding-right: 2%;">
+                            <a href="/deletefood/{{$f->id_makanan}}" type="button" class="btn btn-danger btn-icon-split deletebtn" style="padding-right: 2%;">
                                 <span class="icon text-white">
                                     <i class="fas fa-trash"></i>
                                 </span>

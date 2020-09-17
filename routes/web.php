@@ -34,8 +34,11 @@ Route::group(['middleware' => 'CheckRole:admin'], function () {
     Route::get('/update/form/{id}', 'AdminController@showModalUpdate');
     Route::get('/delete/{id}', 'AdminController@deleteEmploye');
 
-    // Crud Barang
+    // Crud Food
     Route::post('/addfood', 'AdminController@addFood')->name('addfood');
+    Route::post('/updatefood/{id}', 'AdminController@editFood')->name('updatefood');
+    Route::get('/updatefood/form/{id}', 'AdminController@modalUpdateFood');
+    Route::get('/deletefood/{id}', 'AdminController@deleteFood');
 });
 
 Route::group(['middleware' => 'CheckRole:owner'], function () {

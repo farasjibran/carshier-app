@@ -36,7 +36,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header text-gray-700">List Menu :</h6>
-                <a class="collapse-item" href="cards.html"><i class="fas fa-fw fa-eye mr-2" style="color: blue;"></i> View Menu</a>
+                <a class="collapse-item" href="{{ route('menuview')}}"><i class="fas fa-fw fa-eye mr-2" style="color: blue;"></i> View Menu</a>
                 <a class="collapse-item" href="cards.html"><i class="fas fa-fw fa-th-large mr-2" style="color: brown;"></i> Menu Catalogue</a>
             </div>
         </div>

@@ -41,7 +41,8 @@ Route::group(['middleware' => 'CheckRole:admin'], function () {
     Route::get('/deletefood/{id}', 'AdminController@deleteFood');
 });
 
-Route::group(['middleware' => 'CheckRole:owner'], function () {
+Route::group(['middleware' => 'CheckRole:kasir'], function () {
     // Route Owner
-    Route::get('/dashboardowner', 'OwnerController@dashboard')->name('dashboardowner');
+    Route::get('/dashboardkasir', 'KasirController@dashboardkasir')->name('dashboardkasir');
+    Route::get('/order', 'KasirController@orderview')->name('orderview');
 });

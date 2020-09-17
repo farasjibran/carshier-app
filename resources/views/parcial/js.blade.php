@@ -21,3 +21,6 @@
 
 <!-- Page level custom scripts -->
 <script src="{{ asset('js/demo/datatables-demo.js')}}"></script>
+
+<!-- custom js -->
+<script src="{{ asset('js/carshier.js')}}"></script>

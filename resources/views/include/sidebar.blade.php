@@ -27,6 +27,15 @@
         Menu Action
     </div>
 
+    @if(auth()->user()->role == "kasir")
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('orderview')}}">
+            <i class="fas fa-fw fa-clipboard-list" style="color: black;"></i>
+            <span class="text-gray-900">Orders</span></a>
+    </li>
+    @else
+
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -40,13 +49,6 @@
                 <a class="collapse-item" href="cards.html"><i class="fas fa-fw fa-th-large mr-2" style="color: brown;"></i> Menu Catalogue</a>
             </div>
         </div>
-    </li>
-
-    <!-- Nav Item - Charts -->
-    <li class="nav-item">
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-clipboard-list" style="color: black;"></i>
-            <span class="text-gray-900">Orders</span></a>
     </li>
 
     <!-- Divider -->
@@ -71,6 +73,7 @@
             </div>
         </div>
     </li>
+    @endif
 
 </ul>
 <!-- End of Sidebar -->

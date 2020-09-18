@@ -1,6 +1,16 @@
 <!-- Sidebar -->
 <ul class="navbar-nav sidebar sidebar-dark accordion toggled" style="background-color: #FCF0E2;" id="accordionSidebar">
 
+    @if(auth()->user()->role == "kasir")
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboardkasir')}}">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <img src="{{ asset('img/icon.png')}}">
+        </div>
+        <div class="sidebar-brand-text mx-3 text-gray-900">CanTeenn</div>
+    </a>
+    @else
+
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboardadmin')}}">
         <div class="sidebar-brand-icon rotate-n-15">
@@ -8,9 +18,19 @@
         </div>
         <div class="sidebar-brand-text mx-3 text-gray-900">CanTeenn</div>
     </a>
+    @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
+
+    @if(auth()->user()->role == "kasir")
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+        <a class="nav-link" href="{{ route('dashboardkasir')}}">
+            <i class="fas fa-fw fa-tachometer-alt" style="color: black;"></i>
+            <span class="text-gray-900">Dashboard</span></a>
+    </li>
+    @else
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
@@ -18,6 +38,7 @@
             <i class="fas fa-fw fa-tachometer-alt" style="color: black;"></i>
             <span class="text-gray-900">Dashboard</span></a>
     </li>
+    @endif
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -33,6 +54,13 @@
         <a class="nav-link" href="{{ route('orderview')}}">
             <i class="fas fa-fw fa-clipboard-list" style="color: black;"></i>
             <span class="text-gray-900">Orders</span></a>
+    </li>
+
+    <!-- Nav Item - Charts -->
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('voiceview')}}">
+            <i class="fas fa-fw fa-file-invoice" style="color: black;"></i>
+            <span class="text-gray-900">History</span></a>
     </li>
     @else
 

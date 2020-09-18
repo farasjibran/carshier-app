@@ -57,4 +57,11 @@ class KasirController extends Controller
             DetailOrder::insert($data);
         }
     }
+
+    public function transaction()
+    {
+        $transaksi = Transaksi::with('detailorder')->get();
+        // return response()->json(['order' => $transaksi]);
+        return view('parcial.kasir.voiceview', ['transaksi' => $transaksi]);
+    }
 }

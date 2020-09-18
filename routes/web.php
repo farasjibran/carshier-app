@@ -45,6 +45,7 @@ Route::group(['middleware' => 'CheckRole:kasir'], function () {
     // Route Owner
     Route::get('/dashboardkasir', 'KasirController@dashboardkasir')->name('dashboardkasir');
     Route::get('/order', 'KasirController@orderview')->name('orderview');
+    Route::get('/voicemenu', 'KasirController@transaction')->name('voiceview');
     // CRUD Table Barang
     Route::post('/carshier', 'KasirController@store');
 });

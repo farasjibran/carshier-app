@@ -14,8 +14,15 @@ $(document).ready(function () {
         let foodname = $(this).data('name');
         let price = $(this).data('price');
         let image = $(this).data('image');
-        console.log("adding to order")
-        addToCurrentOrder(foodname, id, price, image)
+        console.log("adding to order");
+        for (let i = 0; i < currentOrder.length; i++) {
+            if (currentOrder[i]["id"] == id) {
+                currentOrder[i]["qty"] += 1
+                totalprice += price
+                return
+            }
+        }
+        addToCurrentOrder(foodname, id, price, image);
     })
 
     function addToCurrentOrder(foodname, id, price, image) {

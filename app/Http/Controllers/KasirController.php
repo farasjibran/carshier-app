@@ -47,15 +47,15 @@ class KasirController extends Controller
         $idtransaksi = $transaksi->id_transaksi;
 
         $foods = $request->order;
-        $data = array();
+        $data = [];
         foreach ($foods as $food) {
             $data[] = [
                 'id_makanan' => $food['id'],
                 'qty' => $food['qty'],
                 'id_transaksi' => $idtransaksi
             ];
-            DetailOrder::insert($data);
         }
+        DetailOrder::insert($data);
     }
 
     public function transaction()

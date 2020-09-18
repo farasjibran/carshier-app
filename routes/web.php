@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\KasirController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,4 +49,6 @@ Route::group(['middleware' => 'CheckRole:kasir'], function () {
     Route::get('/voicemenu', 'KasirController@transaction')->name('voiceview');
     // CRUD Table Barang
     Route::post('/carshier', 'KasirController@store');
+    // PDF Controller
+    Route::get('/foods/pdf', 'KasirController@pdf')->name('voicepdf');
 });

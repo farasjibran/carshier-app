@@ -47,16 +47,6 @@
                     <p class="col-4 text-right"> Rp 20000 </p>
                 </div>
 
-                <div class="row">
-                    <p class="col-8">Discount : </p>
-                    <p class="col-4 text-right"> - </p>
-                </div>
-
-                <div class="row">
-                    <p class="col-8">Tax : </p>
-                    <p class="col-4 text-right"> - </p>
-                </div>
-
                 <hr>
                 <div class="row">
                     <p class="col-8 h4">Total : </p>

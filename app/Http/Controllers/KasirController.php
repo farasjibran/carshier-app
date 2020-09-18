@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Food;
 use App\Transaksi;
 use App\DetailOrder;
+use PDF;
 use Illuminate\Http\Request;
 
 
@@ -63,5 +64,13 @@ class KasirController extends Controller
         $transaksi = Transaksi::with('detailorder')->get();
         // return response()->json(['order' => $transaksi]);
         return view('parcial.kasir.voiceview', ['transaksi' => $transaksi]);
+    }
+
+    public function pdf(Request $request)
+    {
+        $transaksi = Transaksi::with('detailorder')->get();
+        $pdf = PDF::loadView('parcial.kasir.voice', ['transaksi' => $transaksi]);
+        $pdf->save(storage_path() . '_voicefood.pdf');
+        return $pdf->download('voicefood.pdf');
     }
 }

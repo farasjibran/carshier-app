@@ -18,7 +18,7 @@
             </a>
             <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
                 <div class="dropdown-header">Action :</div>
-                <a class="dropdown-item" href="#"><i class="fas fa-file-pdf fa-sm fa-fw mr-3" style="color: blue;"></i>Generate Pdf</a>
+                <a class="dropdown-item" href="{{ route('voicepdf')}}"><i class="fas fa-file-pdf fa-sm fa-fw mr-3" style="color: blue;"></i>Generate Pdf</a>
                 <a class="dropdown-item" href="#"><i class="fas fa-file-excel fa-sm fa-fw mr-3" style="color: green;"></i>Generate Excel</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Something else here</a>
@@ -64,60 +64,6 @@
                     @endforeach
                 </tbody>
             </table>
-        </div>
-    </div>
-</div>
-
-<!-- Add User Modal-->
-<div class="modal fade" id="foodAddModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Food Data</h5>
-                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <form method="post" action="{{ route('addfood') }}" enctype="multipart/form-data">
-                @csrf
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label>Food Name</label>
-                        <input type="text" name="nama_makanan" class="form-control @error('foodname') is-invalid @enderror" placeholder="Enter food name" required autofocus>
-                        @error('foodname')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label>Price Food</label>
-                        <input type="text" name="harga" class="form-control @error('pricefood') is-invalid @enderror" placeholder="Enter price" required>
-                        @error('pricefood')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label>Food Stock</label>
-                        <input type="text" name="stok_makanan" class="form-control @error('stockfood') is-invalid @enderror" placeholder="Enter stock"> </input>
-                        @error('stockfood')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                        @enderror
-                    </div>
-                    <div class="form-group">
-                        <label>Food Picture</label>
-                        <input type="file" name="foto" class="form-control">
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-success">Add Data</button>
-                </div>
-            </form>
         </div>
     </div>
 </div>
